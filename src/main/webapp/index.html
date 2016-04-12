@@ -2,10 +2,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Welcome</title>
+        <link rel="stylesheet" href="/DiscussionThread2/styles.css">
     </head>
     <body>
-        <h1>Hello World!!!!!</h1>
+        <h1>Welcome To Discussion Thread</h1>
+        <h2>Please Sign In</h2>
+        <form action="Signin" method="post">
+            <label for="username">Username</label><br>
+            <input type="text" name="username"/><br><br>
+            <label for="password">Password</label><br>
+            <input type="password" name="password"/><br><br>
+            <button type="submit">Login</button>
+        </form>
     </body>
 </html>

@@ -10,18 +10,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="/DiscussionThread2/styles.css">
     </head>
     <body>
-        <!-- <h1>Welcome! ${username} </h1>-->
         <h1>Enter New Post</h1>
         <form action="CreatePost" method="POST">
-            <label for="postText">What do you have to say?</label>
-            <textarea id="postText" name="postText" rows="4" cols="65"></textarea>
+            <label for="postText">What do you have to say?</label><br>
+            <textarea id="postText" name="postText" rows="4" cols="65"></textarea><br>
             <button type="submit">Submit</button>
         </form>
-        <br><a href="/discussion3/Logout">Logout</a>
-        <br><br><br><br>
-        
-        <h5>Or <a href="/discussion3/LoadPosts">view current posts</a></h5>
+        <br>
+        <p>Or <a href="/DiscussionThread2/LoadPosts">View Current Posts</a></p>
+        <br>
+        <a href="/DiscussionThread2/Logout">Logout</a>
+        <br><br>
     </body>
 </html>

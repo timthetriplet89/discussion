@@ -43,13 +43,7 @@ public class Bean123 implements Serializable {
     }
     
     public Boolean isListEmpty() {
-        return false;
-//        if(listPosts != null) {
-//           return (listPosts.isEmpty()); 
-//        } else {
-//           return false;
-//        }
-        
+        return listPosts.isEmpty();
     }
     
 }

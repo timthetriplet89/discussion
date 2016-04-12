@@ -7,14 +7,19 @@
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -55,17 +60,44 @@ public class CreatePost extends HttpServlet {
         // WRITE TO THE FILE (ADD A COUPLE LINES...)
         //     (From http://stackoverflow.com/questions/1625234/how-to-append-text-to-an-existing-file-in-java)
         try {
-            String path = getServletContext().getRealPath("/WEB-INF/discussion");
-            PrintWriter out2 = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
-            // getServletContext().getResource("/WEB-INF/discussion.txt")
+//String path = getServletContext().getRealPath("/WEB-INF/discussion");  //  discussion
+     
+//            String path = "/WEB-INF/discussion";
+//            Path p1 = Paths.get("/WEB-INF/discussion.txt");
+            
+//            String path = getServletContext().getRealPath("/") + "WEB-INF/discussion.txt";
+            
+//             String root = getInitParameter("root");
+            
+//            String path = getServletContext().getRealPath("/WEB-INF/discussion.txt");  //  discussion                   
+//            File file = new File(path);
+            
+    //ServletContext context = getServletConfig().getContext();
+//    URL resourceUrl = getServletContext().getResource("discussion.txt");            
+            
+//            // First check to see if we already have a text file called "discussion"
+//            File file = new File(path);
+//            if(!file.exists()) {          
+//                file.createNewFile();
+//            }
+//            
+            ServletContext servletContext = request.getSession().getServletContext();
+            String path = servletContext.getRealPath("/") + "list_posts.txt"; //  + "list_posts.txt";        
+            
+            File file = new File(path);
+//            String pathFile = file.getCanonicalPath();
+            
+            // From http://beginnersbook.com/2014/01/how-to-append-to-a-file-in-java/            
+//            PrintWriter out2 = new PrintWriter(new BufferedWriter(new FileWriter(resourceUrl.getPath(), true)));
+            PrintWriter out2 = new PrintWriter(new BufferedWriter(new FileWriter(file, true)));
+            //out2.println(discussionPost);
             out2.println(discussionPost);
             out2.close();
         } catch (IOException e) {
             //exception handling left as an exercise for the reader
         }
-        
-        //response.sendRedirect("/discussion3/viewPosts.jsp"); // What was this doing here?! Was redirecting to the wrong page!
-        response.sendRedirect("/discussion3/LoadPosts");
+
+        response.sendRedirect("/DiscussionThread2/LoadPosts");
 }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

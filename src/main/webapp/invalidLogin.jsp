@@ -10,9 +10,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Invalid Login</title>
+        <link rel="stylesheet" href="/DiscussionThread2/styles.css">
     </head>
     <body>
         <h1>Failed To Login</h1><br>
-        <a href="signIn.jsp">Login</a>
+        <a href="index.html">Login</a>
     </body>
 </html>

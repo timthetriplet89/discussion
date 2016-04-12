@@ -34,7 +34,7 @@ public class Logout extends HttpServlet {
             request.getSession().removeAttribute("username");
         }
         
-        response.sendRedirect("/discussion3/signIn.jsp");
+        response.sendRedirect("/DiscussionThread2/index.html");  // signIn.jsp
 
     }
 

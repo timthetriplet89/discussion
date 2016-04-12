@@ -53,10 +53,10 @@ public class Signin extends HttpServlet {
                     !passwordIn.isEmpty()) {
                 
                 request.getSession().setAttribute("username",usernameIn);
-                response.sendRedirect("/discussion3/newPost.jsp");
+                response.sendRedirect("/DiscussionThread2/newPost.jsp");
                 
             } else {
-                response.sendRedirect("/discussion3/invalidLogin.jsp");
+                response.sendRedirect("/DiscussionThread2/invalidLogin.jsp");
             }
         }  catch (FileNotFoundException e) {
                 System.out.println("Printing first catch statement");
@@ -66,33 +66,7 @@ public class Signin extends HttpServlet {
 		e.printStackTrace();
 	}
             }
-            
-//            if (request.getParameter("username").equals("smartguy") && request.getParameter("password").equals("opensesame")) {
-//                request.getSession().setAttribute("username","smartguy");
-//                response.sendRedirect("/Login/welcome.jsp");
-//            } else {
-//                response.sendRedirect("/Login/incorrect.jsp");
-//            }
-
-
-//            Hashtable passwordMap = new Hashtable();
-            
-//            Enumeration enuKeys = properties.keys();
-//                while (enuKeys.hasMoreElements()) {
-//                                    String key = (String) enuKeys.nextElement();
-//                                    String value = properties.getProperty(key);
-//                                    ;
-//                }
-
-
-        
-//            if (request.getParameter("username").equals("smartguy") && request.getParameter("password").equals("opensesame")) {
-//                request.getSession().setAttribute("username","smartguy");
-//                response.sendRedirect("/discussion3/welcome.jsp");
-//            } else {
-//                response.sendRedirect("/discussion3/incorrect.jsp");
-//            }
-
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
