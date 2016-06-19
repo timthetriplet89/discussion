@@ -81,7 +81,7 @@ public class CreatePost extends HttpServlet {
 //                file.createNewFile();
 //            }
 //            
-            ServletContext servletContext = request.getSession().getServletContext(); // Comment....
+            ServletContext servletContext = request.getSession().getServletContext(); // Comment.......
             String path = servletContext.getRealPath("/") + "list_posts.txt"; //  + "list_posts.txt";        
             
             File file = new File(path);
